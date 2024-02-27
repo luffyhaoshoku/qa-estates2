@@ -4,17 +4,17 @@ pipeline {
         stage('BatmanBegins') {
             steps {                
                 bat 'npm install'
-                bat 'npm start'
+                
             }
         }
         stage('THE DARK KNIGHT SERVER') {
         steps {
             parallel (
                 "preview": {
-                    bat 'npm run preview'
+                    bat 'npm run '
                 }
                 "JsonServer": {
-                    bat 'npx json-server db.json'
+                    bat 'npx json-server db.json --port 8000'
                 }      
             )          
             }
