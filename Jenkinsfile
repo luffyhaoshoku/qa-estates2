@@ -11,7 +11,7 @@ pipeline {
         steps {
             parallel (
                 "preview": {
-                    bat 'npm run '
+                    bat 'npm start '
                 }
                 "JsonServer": {
                     bat 'npx json-server db.json --port 8000'
