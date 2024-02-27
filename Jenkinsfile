@@ -15,7 +15,7 @@ pipeline {
                 }
                 b: {
                     bat 'npx json-server db.json'
-                }      #
+                }      
             )          
             }
         }
