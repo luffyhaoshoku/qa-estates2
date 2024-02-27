@@ -12,7 +12,7 @@ pipeline {
             parallel (
                 "preview": {
                     bat 'npm start'
-                }
+                },
                 "JsonServer": {
                     bat 'npx json-server db.json --port 8000'
                 }      
