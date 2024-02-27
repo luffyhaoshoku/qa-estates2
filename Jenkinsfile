@@ -4,11 +4,17 @@ pipeline {
         stage('Build') {
             steps {                
                 bat 'npm install'
+                bat 'npm start'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'npm start'
+                a: {
+                    bat 'npm run preview'
+                }
+                b: {
+                    bat 'npx json-server db.json'
+                }                
             }
         }
     }
