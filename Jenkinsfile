@@ -10,10 +10,10 @@ pipeline {
         stage('THE DARK KNIGHT SERVER') {
         steps {
             parallel (
-                a: {
+                "preview": {
                     bat 'npm run preview'
                 }
-                b: {
+                "JsonServer": {
                     bat 'npx json-server db.json'
                 }      
             )          
